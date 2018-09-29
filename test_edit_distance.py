@@ -73,8 +73,11 @@ class Solution():
         for i in range(self.rows):
             self.col_init(i)
 
+        import pudb.b
+
         for i in range(1, len(self.s) + 1):
             for j in range(1, len(self.t) + 1):
+                self.print_cost()
                 opt[Solution.MATCH] = m[i - 1][j - 1].cost + self.match(
                     s[i - 1], t[j - 1])
                 opt[Solution.INSERT] = m[i][j - 1].cost + self.indel(t[j - 1])
@@ -90,8 +93,6 @@ class Solution():
                         m[i][j].cost = opt[k]
                         m[i][j].parent = k
                     k += 1
-
-        self.print_cost()
 
     def print_cost(self):
         table_str = ""
