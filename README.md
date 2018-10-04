@@ -1,2 +1,2 @@
 # algorithms
-Algorithms implemented with the cleanest code possible
+Common algorithms implemented in python, tested with pytest
