@@ -2,9 +2,7 @@
 
 
 def get_permutations(s):
-    if len(s) == 0:
-        return [""]
-    elif len(s) == 1:
+    if len(s) <= 1:
         return [s]
     else:
 
