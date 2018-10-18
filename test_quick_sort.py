@@ -7,15 +7,15 @@ def partition(A, low, up):
     pivot = A[low]
     while (i <= j):
         while (A[i] < pivot and i < up):
-            i = i + 1
+            i += 1
         while (A[j] > pivot):
-            j = j - 1
+            j -= 1
         if (i < j):
             A[i], A[j] = A[j], A[i]
-            i = i + 1
-            j = j - 1
+            i += 1
+            j -= 1
         else:
-            i = i + 1
+            i += 1
     A[low] = A[j]
     A[j] = pivot
     return j
