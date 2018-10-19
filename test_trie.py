@@ -51,10 +51,9 @@ def search_trie(word, root):
     current = root
     total = len(word)
     matched = 0
-    for c in list(word):
-        found = False
+    for letter in list(word):
         for child in current.children:
-            if c == child.value:
+            if letter == child.value:
                 matched += 1
                 if matched == total and child.term == True:
                     return True
