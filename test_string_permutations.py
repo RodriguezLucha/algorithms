@@ -8,11 +8,11 @@ def get_permutations(s):
 
         perms = []
         for i in range(len(s)):
-            c = s[i]
+            letter = s[i]
             rem = s[:i] + s[i + 1:]
 
             for p in get_permutations(rem):
-                perms.append(c + p)
+                perms.append(letter + p)
 
         return perms
 

@@ -20,14 +20,14 @@ def dijkstra_search(graph, start, end):
             b = node.val
             w = node.weight
 
-            if distances[b] > (distances[a] + w):
+            if (distances[a] + w) < distances[b]:
                 distances[b] = distances[a] + w
                 parents[b] = a
 
         dist = sys.maxint
         unseen = set(graph.edges.keys()).difference(seen)
         for val in unseen:
-            if dist > distances[val]:
+            if distances[val] < dist:
                 dist = distances[val]
                 a = val
 
