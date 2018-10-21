@@ -68,11 +68,20 @@ class Solution():
 
 
 def test_basic_breadth_first_search_using_queue():
-    image = [[1, 1, 1], [1, 1, 0], [1, 0, 1]]
+    image = [
+        [1, 1, 1],    #nopep8
+        [1, 1, 0],    #nopep8
+        [1, 0, 1]
+    ]
+
     sr = 1
     sc = 1
     newColor = 2
-    expected = [[2, 2, 2], [2, 2, 0], [2, 0, 1]]
+    expected = [
+        [2, 2, 2],    #nopep8
+        [2, 2, 0],    #nopep8
+        [2, 0, 1]
+    ]
     s = Solution()
     actual = s.floodFill(image, sr, sc, newColor)
     assert expected == actual

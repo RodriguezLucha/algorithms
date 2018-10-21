@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-from pprint import pprint
 from graph import Graph, Node
 import sys
 from collections import defaultdict

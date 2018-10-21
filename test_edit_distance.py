@@ -1,5 +1,4 @@
-from pprint import pprint
-
+#!/usr/bin/env python
 
 class Cell():
 
