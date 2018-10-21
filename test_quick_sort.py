@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import pytest
 
 
 def partition(A, low, up):
@@ -29,50 +30,19 @@ def quick(A, low, up):
     quick(A, piv_loc + 1, up)
 
 
-def test_quick_sort():
-    actual = [1, 0, 4, 8, 2, 7, 6, 5, 3]
-    expected = sorted(actual)
-    quick(actual, 0, len(actual) - 1)
-    assert actual == expected
+a = []
+a.append([1, 0, 4, 8, 2, 7, 6, 5, 3])
+a.append([1])
+a.append([])
+a.append([1, 1, 1, 1, 1])
+a.append([-10, -9, -7])
+a.append([1, -1, 3, 5, 9, -38])
+a.append([1, 2, 3])
 
 
-def test_quick_sort_1():
-    actual = [1]
-    expected = sorted(actual)
-    quick(actual, 0, len(actual) - 1)
-    assert actual == expected
-
-
-def test_quick_sort_2():
-    actual = []
-    expected = sorted(actual)
-    quick(actual, 0, len(actual) - 1)
-    assert actual == expected
-
-
-def test_quick_sort_3():
-    actual = [1, -1, 3, 5, 9, -38]
-    expected = sorted(actual)
-    quick(actual, 0, len(actual) - 1)
-    assert actual == expected
-
-
-def test_quick_sort_4():
-    actual = [1, 1, 1, 1, 1]
-    expected = sorted(actual)
-    quick(actual, 0, len(actual) - 1)
-    assert actual == expected
-
-
-def test_quick_sort_5():
-    actual = [-10, -9, -7]
-    expected = sorted(actual)
-    quick(actual, 0, len(actual) - 1)
-    assert actual == expected
-
-
-def test_quick_sort_6():
-    actual = [1, 2, 3]
+@pytest.mark.parametrize('A', a)
+def test_quicksort(A):
+    actual = A
     expected = sorted(actual)
     quick(actual, 0, len(actual) - 1)
     assert actual == expected
